@@ -3,6 +3,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const StockSchema = new Schema({
+    name: {
+        type: String
+    },
+    faceValue: {
+        type: Number
+    },
+    dateOfListing: {
+        type: String
+    },
     symbol: {
         type: String,
         required: true,
@@ -10,17 +19,7 @@ const StockSchema = new Schema({
     },
     sector: {
         type: String,
-        required: false
-    },
-    isin: {
-        type: String,
-        required: true,
-        index: { unique: true }
-    },
-    series: {
-        type: String,
-        required: true,
-        index: { unique: true }
+        required: true
     }
 });
 

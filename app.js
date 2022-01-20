@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.send("We are ready");
 });
 
-const URI = process.env.DB_CONNECT;
+const URI = process.env.DB_CONNECT || 'mongodb+srv://arunkumars08:Mongo01@india-markets-daily.29p6f.mongodb.net/indian_market?retryWrites=true&w=majority';
 
 mongoose.connect(URI)
   .then(client => {
