@@ -5,6 +5,7 @@ const cors = require("cors");
 require("dotenv/config");
 
 const stocksRoute = require("./routes/stocks");
+const newsRoute = require("./routes/news");
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/stocks", stocksRoute);
+app.use('/news', newsRoute)
 
 app.get("/", (req, res) => {
   res.send("We are ready");
